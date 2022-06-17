@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsite Domion</title>
+    <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-domion-gray">
+    <header class="pt-6 pb-1">
+        <div class="container mx-auto">
+            <img class="w-32 block mx-auto rounded-full" src="./src/img/domion.jpg" alt="Domion">
+            <div class="text-center my-6">
+                <h1 class="text-white font-bold text-2xl">DOMION</h1>
+                <p class="text-gray-300">Robot Influencer</p>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div id="sheet-lists" class="container mx-auto"></div>
+    </section>
+
+    <footer class="py-6">
+        <div class="container mx-auto">
+            <ul class="text-center">
+                <li class="inline-block mx-1">
+                    <a href="https://www.facebook.com/domainesia" target="_blank" rel="noopener noreferrer">
+                        <img src="./src/img/icon/facebook.svg" alt="Facebook">
+                    </a>
+                </li>
+                <li class="inline-block mx-1">
+                    <a href="https://www.twitter.com/domainesia" target="_blank" rel="noopener noreferrer"><img src="./src/img/icon/twitter.svg" alt="Twitter"></a>
+                </li>
+                <li class="inline-block mx-1">
+                    <a href="https://www.instagram.com/domainesia" target="_blank" rel="noopener noreferrer"><img src="./src/img/icon/instagram.svg" alt="instagram"></a>
+                </li>
+                <li class="inline-block mx-1">
+                    <a href="https://www.linkedin.com/company/domainesia" target="_blank" rel="noopener noreferrer"><img src="./src/img/icon/linkedin.svg" alt="linkedin"></a>
+                </li>
+                <li class="inline-block mx-1">
+                    <a href="https://www.youtube.com/channel/UCzIqPmDnYIyVJlKwodIbPiw" target="_blank" rel="noopener noreferrer"><img src="./src/img/icon/youtube.svg" alt="youtube"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        const getId = document.getElementById('sheet-lists');
+        const sheetApi = 'https://sheets.googleapis.com/v4/spreadsheets/14vUG6skHCv8d6OjJAxZmHuCwn3lJZeUtNG-0tOvX9ck/values/Sheet1?majorDimension=ROWS&key=AIzaSyAk71P5eOcnblRj7tQ7p2WhYr0Pl_sYdEY';
+
+        async function loadData(){
+            fetch(sheetApi)
+            .then(response => response.json())
+            .then(data => {
+                let getData = data.values;
+                // console.log(getData)
+                let html = '';
+                for(let i = 1; i < getData.length; i++) {
+                    // console.log(getData[i]);
+                    html += `<div class="relative group my-6">
+                                <div class="absolute bg-gradient-to-r from-red-500 to-cyan-500 -inset-0.5 rounded-lg blur bg-opacity-75 group-hover:-inset-1.5 transition-all duration-500 group-hover:duration-300"></div>
+                                <a class="relative bg-white py-4 w-full block text-center rounded-lg text-gray-600 font-semibold" href="${getData[i][1]}" target="_blank" rel="noopener noreferrer">
+                                    <button>
+                                        ${getData[i][0]}
+                                    </button>
+                                </a>
+                            </div>`
+                }
+                getId.innerHTML = html;
+            })
+            .catch((error => {
+                console.log(error);
+            }))
+        }
+        loadData()
+    </script>
+</body>
+</html>
