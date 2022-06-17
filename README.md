@@ -11,6 +11,13 @@ cd microsite-link-bookmark
 npm install
 ```
 
+### Google Sheets API Docs
+Get your API KEY and Speadsheet ID
+
+Example ``https://sheets.googleapis.com/v4/spreadsheets/[GOOGLE-SPREADSHEET-API-HERE]/values/[SHEET_RANGE]?majorDimension=ROWS&key=[API-KEY-HERE]``
+
+The docs https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/get
+
 ## Compile Tailwind CSS
 
 ```
@@ -22,11 +29,6 @@ watch command
 ```
 npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
 ```
-
-## Google Sheets API Docs
-Don't forget to add your API KEY and Speadsheet ID
-
-https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/get
 
 ## UI Design
 You can see the design in here
