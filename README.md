@@ -14,7 +14,7 @@ npm install
 ### Google Sheets API Docs
 Get your API KEY and Speadsheet ID
 
-Example ``https://sheets.googleapis.com/v4/spreadsheets/[GOOGLE-SPREADSHEET-API-HERE]/values/[SHEET_RANGE]?majorDimension=ROWS&key=[API-KEY-HERE]``
+Example ``https://sheets.googleapis.com/v4/spreadsheets/[GOOGLE-SPREADSHEET-ID-HERE]/values/[SHEET_RANGE]?majorDimension=ROWS&key=[API-KEY-HERE]``
 
 The docs https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/get
 
