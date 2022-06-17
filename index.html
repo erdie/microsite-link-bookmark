@@ -47,7 +47,7 @@
     </footer>
     <script>
         const getId = document.getElementById('sheet-lists');
-        const sheetApi = 'https://sheets.googleapis.com/v4/spreadsheets/[GOOGLE-SPREADSHEET-API-HERE]/values/[SHEET_RANGE]?majorDimension=ROWS&key=[API-KEY-HERE]';
+        const sheetApi = 'https://sheets.googleapis.com/v4/spreadsheets/[GOOGLE-SPREADSHEET-ID-HERE]/values/[SHEET_RANGE]?majorDimension=ROWS&key=[API-KEY-HERE]';
 
         async function loadData(){
             fetch(sheetApi)
