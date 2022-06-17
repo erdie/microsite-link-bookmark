@@ -24,8 +24,14 @@ npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
 ```
 
 ## Google Sheets API Docs
+Don't forget to add your API KEY and Speadsheet ID
+
 https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/get
 
 ## UI Design
 You can see the design in here
+
 https://www.figma.com/community/file/1119513875404151182
+
+## Video Tutorial
+Soon
